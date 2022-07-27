@@ -1,0 +1,29 @@
+<template>
+    <h1><b>Online Shopping</b></h1>
+    <img src="https://media.istockphoto.com/vectors/shopping-cart-icon-vector-id1128229893" width= 30px; height= 30px;>
+    {countvalue}
+    </br>
+    <table>
+        <thead>
+            <th style="width:50px">Id</th>
+            <th> Name</th>
+            <th>Description</th>
+            <th style="width:60px">MSRP</th>
+            <th>Picture</th>
+            <th></th>
+        </thead>
+        <tbody if:true={productresult.data}>
+            <template for:each={productresult.data} for:item="prod">
+                <tr key={prod.id}>
+                    <td>{prod.id}</td>
+                    <td>{prod.name}</td>
+                    <td>{prod.description}</td>
+                    <td>{prod.msrp}</td>
+                    <td><img src={prod.picture} style="width: 200px; height: 100px;"></td>
+                    <td><button onclick={clickcount}>Add</button></td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+    
+</template>

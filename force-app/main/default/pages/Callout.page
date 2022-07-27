@@ -1,0 +1,19 @@
+<apex:page controller="Calloutcontroller" title="JSON table" >>
+    <apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockTable value="{!performcallout}" var="wrap" width="100%">
+				<apex:column headerValue="name" value="{!wrap.name}"/>
+
+				<apex:column headerValue="description" value="{!wrap.description}"/>
+
+				<apex:column headerValue="msrp" value="{!wrap.msrp}"/>
+
+				<apex:column headerValue="picture" value="{!wrap.picture}"/>
+
+			</apex:pageBlockTable>
+
+		</apex:pageBlock>
+
+	</apex:form>
+
+</apex:page>

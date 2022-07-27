@@ -1,0 +1,6 @@
+<apex:page controller="WelcomeController">
+    <apex:form >
+    	<apex:inputText value="{!surveyId}"/>
+        <apex:commandButton action="{!pageForward}" value="Start Survey"/>
+    </apex:form>
+</apex:page>

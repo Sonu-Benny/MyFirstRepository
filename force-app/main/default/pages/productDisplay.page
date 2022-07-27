@@ -1,0 +1,35 @@
+<apex:page controller="productDeserialize">
+    <apex:form >
+        <apex:pageBlock title="Online shopping">
+         <!--   <apex:pageMessages id="showMsg"></apex:pageMessages>
+                -->
+            <apex:image url="https://media.istockphoto.com/vectors/shopping-cart-icon-vector-id1128229893" alt="cart icon" width="50" height="50"/>
+            <apex:outputPanel id="showMsg"> 
+                <h1>
+                   {!countvalue}
+                </h1>
+                <br/><br/>
+            </apex:outputPanel> 
+    
+            	<apex:pageBlockSection columns="1">
+                      <apex:pageBlockTable value="{!wrapper.products}" var="item">
+                            <apex:column value="{!item.name}" headerValue="name" />
+                            <apex:column value="{!item.msrp}" headerValue="msrp" />
+                            <apex:column value="{!item.description}" headerValue="description" />
+                            <apex:column headerValue="Picture">
+                                <apex:image value="{!item.picture}" id="idp" width="200" height="200"/>
+                          	</apex:column>
+
+                         <!-- <apex:column >
+                              <apex:commandButton value="Add to Cart" action="{!AddToCart}" rerender="showMsg"/>
+                          </apex:column>         -->
+                          
+                          <apex:column >
+                              <apex:commandButton value="Add to Cart" action="{!countclick}" rerender="showMsg"/>
+                          </apex:column>
+                          
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

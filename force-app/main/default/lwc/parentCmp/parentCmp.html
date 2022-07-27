@@ -1,0 +1,11 @@
+<template>
+    <template iterator:acct={myAccounts}>
+        <div onclick={myclick} data-id={acct.value.Name} key={acct.value.id}>
+            {acct.first}-->{acct.index}--> {acct.value.Name}-->{acct.value.BillingCity}-->{acct.last}
+            <br/>
+        </div>
+    </template>
+
+    <c-child-cmp onpasstoparent={p1func}></c-child-cmp>
+    
+</template>

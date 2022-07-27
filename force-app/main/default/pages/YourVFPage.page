@@ -1,0 +1,14 @@
+<apex:page controller="YourPageController" showHeader="{!bolPrintableView}" sidebar="{!bolPrintableView}" action="{!init}" renderAs="pdf">
+    <apex:outputPanel rendered="{!NOT(bolPrintableView)}">
+    <a href="/apex/YourVFPage?print=1" target="_blank">Printable View</a>
+        <apex:detail subject="{!said}"/>
+</apex:outputPanel>
+    <apex:outputPanel rendered="{!bolPrintableView}">
+ <script>
+  window.print()
+ </script>
+</apex:outputPanel>
+<style type="text/css" media="print">
+ @page { size: landscape; }
+</style>
+</apex:page>

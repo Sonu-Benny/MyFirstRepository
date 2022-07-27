@@ -1,0 +1,39 @@
+<template>
+    <form>
+        <label>Search Account:</label>
+        
+        <input type="date" placeholder ="Search.." onchange={onsearchName}></input>
+    </form>
+    <template if:true={searchedAccount}>
+    
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Billing City</th>
+        </thead>
+        <tbody>
+            <template iterator:acc={searchedAccount}>
+                    <tr key={acc.value.Id}>
+                        <td >
+                            {acc.value.Id}
+                        </td>
+                        <td>
+                            {acc.value.Name} 
+                        </td>
+                        <td>
+                            {acc.value.BillingCity}
+                        </td>
+                        <td>
+                            <lightning-button data-id={acc.value.Id} label="Delete Account" onclick={deleteacc}></lightning-button>
+                        </td>
+                    
+                    </tr>
+                    
+            </template>
+            
+        </tbody>
+    </table>
+</template>
+    
+</template>

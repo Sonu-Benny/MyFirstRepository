@@ -1,0 +1,19 @@
+<apex:page controller="contacts" >
+    <apex:form >
+        <apex:pageBlock >
+            <br/><br/><br/>
+            <apex:pageBlockSection >
+                    <apex:inputText value="{!newname}" label="Enter name:"/>
+                    <apex:commandButton value="search" action="{!changename}" rerender="panel"/>  
+            </apex:pageBlockSection> 
+            <br/><br/>
+        	<apex:outputPanel id="panel">
+                <apex:pageBlockTable value="{!acc}" var="a">
+                    <apex:column value="{!a.Name}" headerValue="Names"/>
+                    <apex:column value="{!a.Email}" headerValue="Emails"/>
+                    <apex:column value="{!a.Phone}" headerValue="Phones"/>
+                </apex:pageBlockTable>
+            </apex:outputPanel> 
+       </apex:pageBlock> 
+    </apex:form>
+</apex:page>

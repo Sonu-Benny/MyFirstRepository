@@ -1,0 +1,50 @@
+<template>
+  <!--  Hello {myVar}!!
+    <button onclick={changeName}> Change your Name</button>
+    <button onclick={changeVar}>change child variable</button>
+    <button onclick={callChild}>call child fn</button>
+    <br/>
+    <c-inner-component training-name={trainingName}></c-inner-component> -->
+
+    <table data-id="0" onclick={outerfunc}>
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-id="1" onclick={inner1func}>
+                    1
+                </td>
+                <td>
+                    Sonu 
+                </td>
+                <td>
+                    2021
+                </td>
+            </tr>
+            <tr>
+                <td data-id="2" onclick={inner2func}>
+                    2
+                </td>
+                <td>
+                    Aby
+                </td>
+                <td>
+                    2022
+                </td>
+            </tr>
+            <tr>
+                <td data-id="3" onclick={inner3func}>
+                    3
+                </td>
+                <td>
+                    Allen
+                </td>
+                <td>
+                    2021
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</template>

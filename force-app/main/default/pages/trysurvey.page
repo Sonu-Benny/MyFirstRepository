@@ -1,0 +1,34 @@
+<apex:page ></apex:page>
+<!--<apex:page controller="SurveyController">
+  <apex:form >
+    <apex:pageBlock >
+        <apex:repeat value="{!questionAnswerMap}" var="question">
+            {!question.Question__c}<br/><br/>
+            <apex:repeat value="{!questionAnswerMap[question]}" var="option">
+                
+                <apex:outputPanel rendered="{!IF(question.Answer_type__c=='Checkbox',true,false)}">
+                    <apex:inputCheckbox />
+                    {!option.Option__c} <br/>
+                </apex:outputPanel>
+                
+                <apex:outputLabel rendered="{!IF(question.Answer_type__c=='Picklist',true,false)}">
+                    {!option.Option__c} <br/>
+                </apex:outputLabel>
+                
+                <apex:outputLabel rendered="{!IF(question.Answer_type__c=='Radiobutton',true,false)}">
+                   {!option.Option__c} <br/>
+                </apex:outputLabel>
+                
+                <apex:outputLabel rendered="{!IF(question.Answer_type__c=='Text',true,false)}">
+                    <apex:inputText />  <br/>
+                </apex:outputLabel>
+                
+                <apex:outputLabel rendered="{!IF(question.Answer_type__c=='Textarea',true,false)}">
+                    <apex:inputTextarea /> <br/>
+                </apex:outputLabel>
+                
+            </apex:repeat>	<br/>
+    	</apex:repeat>
+    </apex:pageBlock> 
+  </apex:form>
+</apex:page>   -->

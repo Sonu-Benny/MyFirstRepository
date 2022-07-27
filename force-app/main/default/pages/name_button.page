@@ -1,0 +1,18 @@
+<apex:page controller="name">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1">
+                <h1>
+                    Hello World!!!
+                </h1>                 
+                <br/>
+                <apex:outputPanel id="panel">
+                    My name is {!yourname}
+                </apex:outputPanel>
+                <apex:inputText label="Enter new name:" value="{!getname}"/>
+                
+                <apex:commandButton action="{!namechanger}" value="Change name" rerender="panel"/>
+            </apex:pageBlockSection>
+       </apex:pageBlock>  
+    </apex:form>
+</apex:page>

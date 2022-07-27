@@ -1,0 +1,33 @@
+<apex:page controller="SurveyController">
+  <apex:form >
+    <apex:pageBlock >
+        <apex:repeat value="{!questionMap}" var="questionId">
+            <br/>Q{!questionMap[questionId].Order__c}. {!questionMap[questionId].Question__c} <br/><br/>
+                
+                    <apex:outputLabel rendered="{!IF(questionMap[questionId].Answer_type__c=='Text',true,false)}">
+                        <apex:inputText value="{!questionResponseMap[questionId][0]}" /> 
+                    </apex:outputLabel>
+                    
+                    <apex:outputLabel rendered="{!IF(questionMap[questionId].Answer_type__c=='Textarea',true,false)}">
+                        <apex:inputTextarea value="{!questionResponseMap[questionId][0]}" />
+                    </apex:outputLabel>
+                	
+                	<apex:selectList value="{!questionResponseMap[questionId][0]}" rendered="{!IF(questionMap[questionId].Answer_type__c=='Picklist',true,false)}" size="1">
+                         <apex:selectOptions value="{!questionAnswerMap[questionId]}"/>
+                    </apex:selectList> 
+               
+                    <apex:selectCheckboxes value="{!questionResponseMap[questionId]}" rendered="{!IF(questionMap[questionId].Answer_type__c=='Checkbox',true,false)}" >
+                         <apex:selectOptions value="{!questionAnswerMap[questionId]}"/>
+            		</apex:selectCheckboxes><br/>
+                                  
+                    <apex:selectRadio value="{!questionResponseMap[questionId][0]}" rendered="{!IF(questionMap[questionId].Answer_type__c=='Radiobutton',true,false)}">
+                         <apex:selectOptions value="{!questionAnswerMap[questionId]}"/>
+                    </apex:selectRadio>
+                   	
+    			 <br/>
+            </apex:repeat>	
+        	<br/>
+        	<apex:commandButton value="Submit" action="{!submit}"/>
+    </apex:pageBlock> 
+  </apex:form>
+</apex:page>

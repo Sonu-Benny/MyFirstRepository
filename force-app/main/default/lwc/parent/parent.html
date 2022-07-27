@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="BMI Calculator">
+        <lightning-button variant="brand" label="Calculator" onclick={onbuttonclick}></lightning-button>
+            <c-child onreturnresult={handlereturnresult}></c-child>
+            <lightning-input label="BMI is:" name="result" value={result}></lightning-input>
+    </lightning-card>
+</template>

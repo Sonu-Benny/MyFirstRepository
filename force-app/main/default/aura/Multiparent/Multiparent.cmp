@@ -1,0 +1,11 @@
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+	
+    <c:MultiSelectLookup objectName="ServiceResource" fieldName="Name" label="Service Resource Name" iconName="standard:ServiceResource" placeholder="Select Service Resource"/>
+    
+    <!--<aura:attribute name="recordsList" 	   type="List"   access="global" description="List of Records having data" />
+    <aura:attribute name="selectedDataObj" type="List"   access="global" description="Selected Records Object List" />
+
+   <aura:attribute name="messageFromEvent"  type="String"  />
+    <aura:handler event="c:passList" action=" {!c.handleEvent}"/>
+    The selected Service Resources are {!v.messageFromEvent}-->
+</aura:component>

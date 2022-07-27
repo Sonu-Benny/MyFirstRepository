@@ -1,0 +1,31 @@
+<template>
+    <template if:true={display}>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Stage</th>
+        </thead>
+        <tbody>
+            <template iterator:op={display}>
+                    <tr key={op.value.Id}>
+                        <td >
+                            {op.value.Name}
+                        </td>
+                        <td>
+                            {op.value.Id} 
+                        </td>
+                        <td>
+                            {op.value.StageName}
+                        </td>
+                        
+                    
+                    </tr>
+                    
+            </template>
+            
+        </tbody>
+    </table>
+</template>
+    
+</template>
